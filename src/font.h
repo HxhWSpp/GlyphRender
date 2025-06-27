@@ -42,6 +42,8 @@ private:
     Char get_char_from_atlas(int x , int y , int height , int width , int xoffset , int yoffset ,int xadvance,unsigned char* atlas_buffer , int chan , int atlas_width);
 public:
     Font(std::string font_text_file);
+
+    Char get_char(int ascii_code);
    
     std::vector<unsigned char> from_text(std::string text , int &h , int &w);   
 };

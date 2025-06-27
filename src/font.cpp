@@ -235,3 +235,8 @@ std::vector<unsigned char> Font::from_text(std::string text , int &h , int &w)
     w = final_w;
     return result;   
 }
+
+Char Font::get_char(int ascii_code)
+{
+    return this->chars.at(ascii_code);
+}
