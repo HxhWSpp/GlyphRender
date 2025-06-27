@@ -43,5 +43,5 @@ private:
 public:
     Font(std::string font_text_file);
    
-    unsigned char* from_text(std::string text , int &h , int &w);   
+    std::vector<unsigned char> from_text(std::string text , int &h , int &w);   
 };

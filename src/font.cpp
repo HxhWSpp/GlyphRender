@@ -6,7 +6,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "../libs/stb_image.h"
 
-
 Char::Char(std::vector<unsigned char> data,int width,int height,int xadvance,int xoffset)
 {
     this->data = data;
@@ -190,7 +189,7 @@ Char Font::get_char_from_atlas(int x , int y , int height , int width , int xoff
     return _char;
 }
 
-unsigned char* Font::from_text(std::string text , int &h , int &w)
+std::vector<unsigned char> Font::from_text(std::string text , int &h , int &w)
 {
     int final_w = 0;
     int final_h = 0;
@@ -234,7 +233,5 @@ unsigned char* Font::from_text(std::string text , int &h , int &w)
 
     h = final_h;
     w = final_w;
-    return result.data();
-    
-    
+    return result;   
 }
