@@ -1,6 +1,6 @@
 # GlyphRender
 
-A basic C++ library for exporting image data from text
+A basic C++ library for getting image data from text
 
 ```bash
 ./build.sh
@@ -11,3 +11,5 @@ A basic C++ library for exporting image data from text
 ```
 //see main.cpp
 ```
+
+![Image](result.png)
