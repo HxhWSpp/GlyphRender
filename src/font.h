@@ -24,6 +24,8 @@ class Font
 {
 private:
     std::map<int , Char> chars;
+    int font_size;
+    std::string font_name;
 
     std::string get_param(std::string buffer , std::string param);
 
@@ -42,6 +44,7 @@ private:
     Char get_char_from_atlas(int x , int y , int height , int width , int xoffset , int yoffset ,int xadvance,unsigned char* atlas_buffer , int chan , int atlas_width);
 public:
     Font(std::string font_text_file);
+    int get_font_size();
 
     Char get_char(int ascii_code);
    

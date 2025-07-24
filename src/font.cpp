@@ -19,8 +19,17 @@ Char::Char(){};
 
 void Font::parse_info(std::string line)
 {
-    //[TODO]
-    //?
+    std::istringstream iss(line);
+    std::vector<std::string> strs;      
+    std::string str;
+       
+    while (iss >> str)
+    {
+        strs.push_back(str);
+    }  
+    
+    font_name = get_param(strs[1] , "face");
+    font_size = stoi(get_param(strs[2] , "size"));
 }
 
 void Font::parse_common(std::string line)
@@ -93,6 +102,11 @@ void Font::parse_char(std::string line , int &id, int &x,int &y,int &width,int &
     xoffset =  std::stoi(get_param(tokens[c++] , "xoffset"));
     yoffset =  std::stoi(get_param(tokens[c++] , "yoffset"));
     xadvance =  std::stoi(get_param(tokens[c++] , "xadvance"));   
+}
+
+int Font::get_font_size()
+{
+    return font_size;
 }
 
 Font::Font(std::string font_text_file)
